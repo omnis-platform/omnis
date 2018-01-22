@@ -23,12 +23,10 @@
     "url": "https://gitlab.com/igorbezsmertnyi/omnis/issues"
   },
   "homepage": "https://gitlab.com/igorbezsmertnyi/omnis#README",
-  "private": true,
   "dependencies": {
     "fs": "^0.0.1-security",
     "json-loader": "^0.5.7",
     "node-fetch": "^1.7.3",
-    "private-repo": "git+https://git@gitlab.com:igorbezsmertnyi/omnis.git#master",
     "ws": "^4.0.0"
   }
 }
