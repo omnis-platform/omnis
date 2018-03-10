@@ -15,8 +15,6 @@ const makeRequest = async (endpointName, userData) => {
 }
 
 const create = async (endpointName, data) => {
-  console.log(body)
-
   if (config.appId) {
     const userData = await user(data)
     return await makeRequest(endpointName, userData)
