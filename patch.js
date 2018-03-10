@@ -14,14 +14,12 @@ const body = require('./helpers/body')
 
 const patch = async (endpointName, data, ids) => {
   if (config.appId) {
-    const res = await fetch(Routes.httpPath(endpointName, `&ids=${ids}`), {
+    return await fetch(Routes.httpPath(endpointName, `&ids=${ids}`), {
       method: 'PATCH',
       headers: REQUEST_HEADER(),
       mode: 'cors',
       body: body(data)
     })
-
-    return await res.json()
   } else {
     console.error("omnis.json doesn't exist")
   }

@@ -13,14 +13,12 @@ const body = require('./helpers/body')
 
 const email = async (endpointName, data) => {
   if (config.appId) {    
-    const res = await fetch(Routes.httpPath(endpointName), {
+    return await fetch(Routes.httpPath(endpointName), {
       method: 'POST',
       headers: REQUEST_HEADER(),
       mode: 'cors',
       body: body(data)
     })
-
-    return await res.json()
   } else {
     console.error("omnis.json doesn't exist")
   }

@@ -6,14 +6,12 @@ const body = require('../helpers/body')
 const user = require('../helpers/user')
 
 const makeRequest = async (endpointName, userData) => {
-  const res = await fetch(Routes.userCreatePath(endpointName), {
+  return await fetch(Routes.userCreatePath(endpointName), {
     method: 'POST',
     headers: REQUEST_HEADER(),
     mode: 'cors',
     body: body(userData)
   })
-
-  return await res.json()
 }
 
 const create = async (endpointName, data) => {

@@ -6,14 +6,12 @@ const userToken = require('../helpers/userToken')
 
 const logout = async (endpointName, userId, sessionToken) => {
   if (config.appId) {
-    const res = await fetch(Routes.userLogoutPath(endpointName, userId), {
+    return await fetch(Routes.userLogoutPath(endpointName, userId), {
       method: 'DELETE',
       headers: REQUEST_HEADER(),
       mode: 'cors',
       body: userToken(sessionToken)
     })
-
-    return await res.json()
   } else {
     console.error("omnis.json doesn't exist")
   }

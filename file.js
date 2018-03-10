@@ -6,14 +6,12 @@ const body = require('./helpers/body')
 const fileObject = require('./helpers/fileObject')
 
 const makeRequest = async (endpointName, file) => {
-  const res = await fetch(Routes.httpPath(endpointName), {
+  return await fetch(Routes.httpPath(endpointName), {
     method: 'POST',
     headers: REQUEST_HEADER(),
     mode: 'cors',
     body: body(file)
   })
-
-  return await res.json()
 }
 
 /**

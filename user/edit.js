@@ -8,14 +8,12 @@ const edit = async (endpointName, data, userId, sessionToken) => {
   if (config.appId) {
     const userObj = await userEdit(data, sessionToken)
 
-    const res = await fetch(Routes.userEditPaht(endpointName, userId), {
+    return await fetch(Routes.userEditPaht(endpointName, userId), {
       method: 'PATCH',
       headers: REQUEST_HEADER(),
       mode: 'cors',
       body: userObj
     })
-
-    return await res.json()
   } else {
     console.error("omnis.json doesn't exist")
   }

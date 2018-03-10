@@ -6,14 +6,12 @@ const body = require('../helpers/body')
 
 const login = async (endpointName, data) => {
   if (config.appId) {
-    const res = await fetch(Routes.userLoginPath(endpointName), {
+    return await fetch(Routes.userLoginPath(endpointName), {
       method: 'POST',
       headers: REQUEST_HEADER(),
       mode: 'cors',
       body: body(data)
     })
-
-    return await res.json()
   } else {
     console.error("omnis.json doesn't exist")
   }

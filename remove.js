@@ -13,13 +13,11 @@ const idsQuery = require('./helpers/idsQuery')
 
 const remove = async (endpointName, ids = []) => {
   if (config.appId) {
-    const res = await fetch(Routes.httpPath(endpointName, idsQuery(ids)), {
+    return await fetch(Routes.httpPath(endpointName, idsQuery(ids)), {
       method: 'DELETE',
       headers: REQUEST_HEADER(),
       mode: 'cors'
     })
-
-    return await res.json()
   } else {
     console.error("omnis.json doesn't exist")
   }

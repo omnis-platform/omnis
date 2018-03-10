@@ -13,13 +13,11 @@ const query = require('./helpers/query')
 
 const get = async (endpointName, ...arg) => {
   if (config.appId) {
-    const res = await fetch(Routes.httpPath(endpointName, query(...arg)), {
+    return await fetch(Routes.httpPath(endpointName, query(...arg)), {
       method: 'GET',
       headers: REQUEST_HEADER(),
       mode: 'cors'
     })
-
-    return await res.json()
   } else {
     console.error("omnis.json doesn't exist")
   }
