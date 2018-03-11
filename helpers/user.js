@@ -1,3 +1,5 @@
+const fileObject = require('./fileObject')
+
 const user = async data => {
   let image = null
 
