@@ -14,7 +14,7 @@ const body = require('./helpers/body')
 
 const patch = async (endpointName, data, ids) => {
   if (config.appId) {
-    return await fetch(Routes.httpPath(endpointName, `&ids=${ids}`), {
+    return await fetch(Routes.httpPath(endpointName, `?ids=${ids}`), {
       method: 'PATCH',
       headers: REQUEST_HEADER(),
       mode: 'cors',
