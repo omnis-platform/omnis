@@ -1,3 +1,5 @@
+const fileObject = require('./fileObject')
+
 const userEdit = async (data, token) => {
   let image = null
 
