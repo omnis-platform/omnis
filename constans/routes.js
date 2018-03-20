@@ -8,27 +8,27 @@ module.exports = {
     `wss://cloud.omnis-platform.com/api/cable/${endpointName}?api_key=${apiKey}`
   ),
   userCreatePath: endpointName => (
-    `https://cloud.omnis-platform.com/api/auth/${endpointName}/user/create`
+    `https://cloud.omnis-platform.com/api/auth/${config.app}/${endpointName}/user/create`
   ),
   userLoginPath: endpointName => (
-    `https://cloud.omnis-platform.com/api/auth/${endpointName}/user/login`
+    `https://cloud.omnis-platform.com/api/auth/${config.app}/${endpointName}/user/login`
   ),
   userLogoutPath: (endpointName, userId, sessionToken) => (
-    `https://cloud.omnis-platform.com/api/auth/${endpointName}/user/${userId}/logout`
+    `https://cloud.omnis-platform.com/api/auth/${config.app}/${endpointName}/user/${userId}/logout`
   ),
   userShowPath: (endpointName, userId) => (
-    `https://cloud.omnis-platform.com/api/auth/${endpointName}/user/${userId}`
+    `https://cloud.omnis-platform.com/api/auth/${config.app}/${endpointName}/user/${userId}`
   ),
   userEditPaht: (endpointName, userId) => (
-    `https://cloud.omnis-platform.com/api/auth/${endpointName}/user/${userId}/edit`
+    `https://cloud.omnis-platform.com/api/auth/${config.app}/${endpointName}/user/${userId}/edit`
   ),
   userRemovePath: (endpointName, userId) => (
-    `https://cloud.omnis-platform.com/api/auth/${endpointName}/user/${userId}/delete`
+    `https://cloud.omnis-platform.com/api/auth/${config.app}/${endpointName}/user/${userId}/delete`
   ),
   userResetPasswordPath: endpointName => (
-    `https://cloud.omnis-platform.com/api/auth/${endpointName}/user/reset`
+    `https://cloud.omnis-platform.com/api/auth/${config.app}/${endpointName}/user/reset`
   ),
   userPasswordUpdatePath: (endpointName, userToken) => (
-    `https://cloud.omnis-platform.com/api/auth/${endpointName}/user/reset/${userToken}`
+    `https://cloud.omnis-platform.com/api/auth/${config.app}/${endpointName}/user/reset/${userToken}`
   )
 }
