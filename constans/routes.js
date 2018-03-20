@@ -1,6 +1,8 @@
+const config = require('../config')
+
 module.exports = {
   httpPath: (endpointName, q = '') => (
-    `https://cloud.omnis-platform.com/api/v1/${endpointName}${q}`
+    `https://cloud.omnis-platform.com/api/v1/${config.app}/${endpointName}${q}`
   ),
   websoketPath: (endpointName, apiKey) => (
     `wss://cloud.omnis-platform.com/api/cable/${endpointName}?api_key=${apiKey}`
