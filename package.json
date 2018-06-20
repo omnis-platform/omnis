@@ -15,7 +15,11 @@
     "omnis",
     "js",
     "omnis",
-    "platform"
+    "platform",
+    "firebase",
+    "cloud",
+    "cloud platform",
+    "cloud data base"
   ],
   "author": "Igor Bezsmertnyi (bezsmertnyi.igor@gmail.com)",
   "license": "ISC",
