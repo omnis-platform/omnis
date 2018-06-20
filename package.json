@@ -1,6 +1,6 @@
 {
   "name": "omnis",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Fron-end interface form omnis platform ",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://git@gitlab.com/igorbezsmertnyi/omnis.git"
+    "url": "git+https://github.com/omnis-platform/omnis.git"
   },
   "keywords": [
     "omnis",
@@ -24,9 +24,9 @@
   "author": "Igor Bezsmertnyi (bezsmertnyi.igor@gmail.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/igorbezsmertnyi/omnis/issues"
+    "url": "https://github.com/omnis-platform/omnis/issues"
   },
-  "homepage": "https://gitlab.com/igorbezsmertnyi/omnis#README",
+  "homepage": "https://github.com/omnis-platform/omnis#README",
   "dependencies": {
     "fs": "^0.0.1-security",
     "json-loader": "^0.5.7",
