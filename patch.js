@@ -1,7 +1,5 @@
-const fetch = require('node-fetch')
-const config = require('./config')
+const requestWrap = require('./helpers/requestWrap')
 const Routes = require('./constans/routes')
-const REQUEST_HEADER = require('./constans/requestHeaders')
 const body = require('./helpers/body')
 
 /**
@@ -12,17 +10,6 @@ const body = require('./helpers/body')
  * @param  array   ids
  */
 
-const patch = async (endpointName, data, ids) => {
-  if (config.appId) {
-    return await fetch(Routes.httpPath(endpointName, `?ids=${ids}`), {
-      method: 'PATCH',
-      headers: REQUEST_HEADER(),
-      mode: 'cors',
-      body: body(data)
-    })
-  } else {
-    console.error("omnis.json doesn't exist")
-  }
-}
-
-module.exports = patch
+module.exports = async (endpointName, data, ids) => (
+  await requestWrap('patch', Routes.httpPath(endpointName, `?ids=${ids}`), body(data))
+)

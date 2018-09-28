@@ -1,7 +1,6 @@
 const WebSocket = require('ws')
 const config = require('./config')
 const Routes = require('./constans/routes')
-const REQUEST_HEADER = require('./constans/requestHeaders')
 const WebsocketSubscribe = require('./constans/WebsocketSubscribe')
 
 /**
@@ -13,7 +12,6 @@ const WebsocketSubscribe = require('./constans/WebsocketSubscribe')
 const connect = endpointName => {
   if (config.appId) {
     const socket = new WebSocket(Routes.websoketPath(endpointName, config.apiKey))
-    let res = []
 
     socket.onopen = () => socket.send(WebsocketSubscribe)
   
