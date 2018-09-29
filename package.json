@@ -1,6 +1,6 @@
 {
   "name": "omnis",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Fron-end interface form omnis platform ",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,8 @@
     "omnis",
     "platform",
     "firebase",
+    "serverless",
+    "cloud computing",
     "cloud",
     "cloud platform",
     "cloud data base"
