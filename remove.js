@@ -1,7 +1,5 @@
-const fetch = require('node-fetch')
-const config = require('./config')
+const requestWrap = require('./helpers/requestWrap')
 const Routes = require('./constans/routes')
-const REQUEST_HEADER = require('./constans/requestHeaders')
 const idsQuery = require('./helpers/idsQuery')
 
 /**
@@ -11,16 +9,8 @@ const idsQuery = require('./helpers/idsQuery')
  * @param  object  ids
  */
 
-const remove = async (endpointName, ids = []) => {
-  if (config.appId) {
-    return await fetch(Routes.httpPath(endpointName, idsQuery(ids)), {
-      method: 'DELETE',
-      headers: REQUEST_HEADER(),
-      mode: 'cors'
-    })
-  } else {
-    console.error("omnis.json doesn't exist")
-  }
-}
+const remove = async (endpointName, ids = []) => (
+  await requestWrap('delete', Routes.httpPath(endpointName, idsQuery(ids)))
+)
 
 module.exports = remove

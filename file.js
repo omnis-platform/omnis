@@ -1,18 +1,11 @@
-const fetch = require('node-fetch')
-const config = require('./config')
+const requestWrap = require('./helpers/requestWrap')
 const Routes = require('./constans/routes')
-const REQUEST_HEADER = require('./constans/requestHeaders')
 const body = require('./helpers/body')
 const fileObject = require('./helpers/fileObject')
 
-const makeRequest = async (endpointName, file) => {
-  return await fetch(Routes.httpPath(endpointName), {
-    method: 'POST',
-    headers: REQUEST_HEADER(),
-    mode: 'cors',
-    body: body(file)
-  })
-}
+const makeRequest = async (endpointName, file) => (
+  requestWrap('post', Routes.httpPath(endpointName), body(file))
+)
 
 /**
  * file method return an promise
@@ -21,17 +14,11 @@ const makeRequest = async (endpointName, file) => {
  * @param  object data
  */
 
-const file = async (endpointName, data) => {
-  if (config.appId) {	
-    try {
-      const file = await fileObject(data)
-      return await makeRequest(endpointName, file)
-    } catch (err) {
-      console.error(err)
-    }
-  } else {
-    console.error("omnis.json doesn't found")
+module.exports = async (endpointName, data) => {
+  try {
+    const file = await fileObject(data)
+    return await makeRequest(endpointName, file)
+  } catch (err) {
+    console.error(err)
   }
 }
-
-module.exports = file

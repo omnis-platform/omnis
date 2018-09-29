@@ -8,17 +8,16 @@ const put = require('./put')
 const remove = require('./remove')
 const user = require('./user')
 const config = require('./config')
-const Omnis = {}
 
-Omnis.connect = connect
-Omnis.email = email
-Omnis.file = file
-Omnis.get = get
-Omnis.post = post
-Omnis.patch = patch
-Omnis.put = put
-Omnis.delete = remove
-Omnis.user = user
-Omnis.config = config
-
-module.exports = Omnis
+module.exports = {
+  connect,
+  email,
+  file,
+  get,
+  post,
+  patch,
+  put,
+  user,
+  config,
+  delete: remove
+}
