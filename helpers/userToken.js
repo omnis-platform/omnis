@@ -1,3 +1,3 @@
-const userToken = token => JSON.stringify({ session_token: token })
+const userToken = token => JSON.stringify({ data: { session_token: token }})
 
 module.exports = userToken
