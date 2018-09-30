@@ -1,6 +1,6 @@
 {
   "name": "omnis",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Fron-end interface form omnis platform ",
   "main": "index.js",
   "scripts": {
